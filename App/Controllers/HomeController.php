@@ -12,4 +12,8 @@ class HomeController extends AControllerBase
 
     }
 
+    public function zmena()
+    {
+        return ["typ" => $_GET["typ"], "nazov" => $_GET["nazov"] ];
+    }
 }

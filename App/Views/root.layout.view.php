@@ -38,7 +38,7 @@
                             Filmy
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="?c=Movie&a=action">Akčné</a>
+                            <a class="dropdown-item" href="?c=Movie&a=akcny">Akčné</a>
                             <a class="dropdown-item" href="?c=Movie&a=scifi">Sci-fi</a>
                             <a class="dropdown-item" href="?c=Movie&a=horror">Horrory</a>
                         </div>
@@ -48,9 +48,18 @@
                             Seriály
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="?c=Series&a=comedy">Komédie</a>
-                            <a class="dropdown-item" href="?c=Series&a=fantasy">Fantasy</a>
-                            <a class="dropdown-item" href="?c=Series&a=drama">Drama</a>
+                            <a class="dropdown-item" href="?c=Show&a=komedia">Komédie</a>
+                            <a class="dropdown-item" href="?c=Show&a=fantasy">Fantasy</a>
+                            <a class="dropdown-item" href="?c=Show&a=drama">Drama</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Pridaj
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="?c=Movie&a=add">Film</a>
+                            <a class="dropdown-item" href="?c=Show&a=add">Seriál</a>
                         </div>
                     </li>
                     <li class="nav-item">

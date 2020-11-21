@@ -33,11 +33,27 @@ body{
 .card:hover{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-.navbar a:hover{
-    /*text-shadow: 4px 8px 5px rgba(0, 0, 0, 0.2);*/
-    border-bottom: 1px solid black;
-}
+
 .container a{
     text-decoration: none;
     color: inherit;
+}
+
+.card .btn {
+    color: white;
+}
+
+.mazanie{
+    text-align: right;
+}
+
+.upravovanie{
+    text-align: left;
+}
+.btn{
+    color: white !important;
+}
+
+.card-footer{
+    border-top:0;
 }

@@ -14,25 +14,44 @@ class DBStorage
 
     public function __construct()
     {
-        $this->pdo = new PDO("mysql:host=localhost;dbname=blog", "root", "dtb456");
+        $this->pdo = new PDO("mysql:host=localhost;dbname=projekt", "root", "dtb456");
     }
 
-    public function LoadAll()
+    public function LoadAllMovies()
     {
         $result = [];
 
-        $r = $this->pdo->query("SELECT * FROM articles");
+        $r = $this->pdo->query("SELECT * FROM movies");
 
         foreach ($r as $item) {
-            $result[] = new Article($item['title'],$item['text']);
+            $result[] = new Movie($item['nazov'],$item['popis'],$item['zaner']);
         }
 
         return $result;
     }
 
-    public function Save(Article $param)
+    public function SaveMovie(Movie $movie)
     {
-       $statement = $this->pdo->prepare("INSERT INTO articles (title, text) value (?,?)");
-        $statement->execute([$param->getTitle(), $param->getText()]);
+       $statement = $this->pdo->prepare("INSERT INTO movies (naozv, popis, zaner, img) value (?,?,?,?)");
+        $statement->execute([$movie->getTitle(), $movie->getText()]);
+    }
+
+    public function LoadAllShows()
+    {
+        $result = [];
+
+        $r = $this->pdo->query("SELECT * FROM shows");
+
+        foreach ($r as $item) {
+            $result[] = new Movie($item['nazov'],$item['popis'],$item['zaner']);
+        }
+
+        return $result;
+    }
+
+    public function SaveShow(Show $show)
+    {
+        $statement = $this->pdo->prepare("INSERT INTO shows (naozv, popis, zaner, img) value (?,?,?,?)");
+        $statement->execute([$show->getTitle(), $show->getText()]);
     }
 }
