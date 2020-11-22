@@ -23,7 +23,7 @@
             <div class="form-group">
                 <label for="zanerFilmu">Žáner filmu</label>
                 <select class="form-control" name="zaner" required>
-                    <option value="" selected><?= $data["instance"]->getZaner() ?></option>
+                    <option selected><?= $data["instance"]->getZaner() ?></option>
                     <option>akcny</option>
                     <option>scifi</option>
                     <option>horror</option>
@@ -32,7 +32,7 @@
 
             <div class="form-group">
                 <label for="popisFilmu">Popis filmu</label>
-                <textarea class="form-control" rows="4" name="popis"> <?= $data["instance"]->getPopis() ?> </textarea>
+                <textarea class="form-control" rows="4" name="popis" required> <?= $data["instance"]->getPopis() ?> </textarea>
             </div>
 
             <div class="form-group">
@@ -61,7 +61,7 @@
             <div class="form-group">
                 <label for="zanerFilmu">Žáner filmu</label>
                 <select class="form-control" name="zaner" required>
-                    <option value="" selected disabled>Vyber žáner</option>
+                    <option selected disabled>Vyber žáner</option>
                     <option>akcny</option>
                     <option>scifi</option>
                     <option>horror</option>
@@ -70,7 +70,7 @@
 
             <div class="form-group">
                 <label for="popisFilmu">Popis filmu</label>
-                <textarea class="form-control" rows="4" name="popis" placeholder="Popis"></textarea>
+                <textarea class="form-control" rows="4" name="popis" placeholder="Popis" required></textarea>
             </div>
 
             <div class="form-group">

@@ -25,7 +25,7 @@
         <div class="form-group">
             <label for="zanerFilmu">Žáner filmu</label>
             <select class="form-control" name="zaner" required>
-                <option value="" selected><?= $data["instance"]->getZaner() ?></option>
+                <option selected><?= $data["instance"]->getZaner() ?></option>
                 <option>akcny</option>
                 <option>scifi</option>
                 <option>horror</option>

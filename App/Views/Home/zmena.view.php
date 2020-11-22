@@ -5,9 +5,9 @@ switch ($data["typ"])
     case "add":?>
         <div class="container">
             <div class="jumbotron text-left transparent">
-                <h1 class="display-4"> Pridanie zaznamu prebehlo uspesne </h1>
+                <h1 class="display-4"> Pridanie záznamu prebehlo úspešne </h1>
                 <hr class="my-4">
-                <p> Polozka <strong><?= $data["nazov"] ?></strong> uspesne pridana</p>
+                <p> Položka <strong><?= $data["nazov"] ?></strong> úspešne pridaná</p>
             </div>
         </div>
     <?php
@@ -16,9 +16,9 @@ switch ($data["typ"])
     case "edit":?>
         <div class="container">
             <div class="jumbotron text-left transparent">
-                <h1 class="display-4"> Editacia zaznamu prebehla uspesne </h1>
+                <h1 class="display-4"> Editácia záznamu prebehla úspešne </h1>
                 <hr class="my-4">
-                <p>Zmena polozky <strong><?= $data["nazov"] ?></strong> prebehla uspesne</p>
+                <p>Zmena položky <strong><?= $data["nazov"] ?></strong> prebehla úspešne</p>
             </div>
         </div>
     <?php
@@ -27,9 +27,9 @@ switch ($data["typ"])
     case "delete":?>
         <div class="container">
             <div class="jumbotron text-left transparent">
-                <h1 class="display-4"> Vymazanie zaznamu prebehlo uspesne </h1>
+                <h1 class="display-4"> Vymazanie záznamu prebehlo úspešne </h1>
                 <hr class="my-4">
-                <p> Polozka <strong><?= $data["nazov"] ?></strong> uspesne vymazana</p>
+                <p> Položka <strong><?= $data["nazov"] ?></strong> úspešne vymazaná</p>
             </div>
         </div>
     <?php

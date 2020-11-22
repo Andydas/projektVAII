@@ -33,6 +33,14 @@ class Movie extends Model
         return "movies";
     }
 
+    public function setAll($nazov = "", $popis = "", $zaner = "", $img = "")
+    {
+        $this->nazov = $nazov;
+        $this->popis = $popis;
+        $this->zaner = $zaner;
+        $this->img = $img;
+    }
+
     /**
      * @return mixed
      */

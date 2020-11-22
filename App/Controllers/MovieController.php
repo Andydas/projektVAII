@@ -61,8 +61,12 @@ class MovieController extends  AControllerBase
             return null;
         }
 
-
         $movie = new Movie($_POST["nazov"], $_POST["popis"], $_POST["zaner"], $_POST["img"]);
+
+        if ($_POST["img"] == "")
+        {
+            $movie->setImg("https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/600px-No_image_available.svg.png");
+        }
 
         $validationOutput = $this->validate($_POST["nazov"], $_POST["img"]);
 
@@ -78,14 +82,10 @@ class MovieController extends  AControllerBase
 
     public function edit()
     {
-
         if (isset($_POST["id"]))
         {
             $movie = Movie::getOne($_GET["id"]);
-            $movie->setNazov($_POST["nazov"]);
-            $movie->setPopis($_POST["popis"]);
-            $movie->setZaner($_POST["zaner"]);
-            $movie->setImg($_POST["img"]);
+            $movie->setAll($_POST["nazov"], $_POST["popis"], $_POST["zaner"], $_POST["img"]);
 
             $validationOutput = $this->validate($_POST["nazov"], $_POST["img"]);
 
@@ -97,8 +97,8 @@ class MovieController extends  AControllerBase
         }
         else
         {
-            $validationOutput = null;
             $movie = Movie::getOne($_GET["id"]);
+            $validationOutput = $this->validate($movie->getNazov(), $movie->getImg());
         }
 
         return ["instance" => $movie, "errors" => $validationOutput];
@@ -125,11 +125,17 @@ class MovieController extends  AControllerBase
         $errNazov = [];
         $errImg = [];
 
+        //nazov
        if (strlen($nazov)<2)
        {
            $errNazov[] = "Názov musí mať aspoň dva znaky.";
        }
+       if (ord($nazov) < 65 || ord($nazov) > 90)
+       {    //ascii A=65, Z=90
+           $errNazov[] = "Názov musí začínať veľkým písmenom.";
+       }
 
+       //obrazok
        if  ($img != "")
        {
            if (substr($img, 0, 4) != "http")
@@ -138,7 +144,7 @@ class MovieController extends  AControllerBase
            }
        }
 
-
+       //kontrola validacie
        if (count($errNazov) != 0 || count($errImg) != 0)
        {
            return ["nazov" => $errNazov, "img" => $errImg];

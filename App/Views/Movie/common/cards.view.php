@@ -10,7 +10,7 @@ for ($i=0; $i<$rows; $i++)
     <div class="row">
         <?php for ($j=0; $j<$cols && ($i * 2 + $j) < $count; $j++)
         {?>
-            <div class="card sedePozadie mb-3 mr-2 ml-2 sm-col-6 md-col-6" style="max-width: 540px;">
+            <div class="card sedePozadie mb-3 mr-2 ml-2 col-xs-12 col-sm-12 col-md-6 col-lg-6" style="max-width: 540px;">
                 <div class="row no-gutters h-100">
                     <div class="col-md-4 d-flex align-items-center">
                         <img src="<?= $data[$inc]->getImg() ?>" class="card-img">
